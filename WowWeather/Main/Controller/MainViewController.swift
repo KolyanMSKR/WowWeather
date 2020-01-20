@@ -55,6 +55,28 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         placesClient = GMSPlacesClient()
         
         getWeatherForCurrentLocation()
+        
+        
+        
+        
+//----------------------------------------------------------------------
+        let snowView = SnowView(frame: CGRect(x: -150, y: -100, width: 300, height: 50))
+        let snowClipView = UIView(frame: view.frame.offsetBy(dx: 0, dy: 0))
+        snowClipView.clipsToBounds = true
+        snowClipView.addSubview(snowView)
+        snowView.isUserInteractionEnabled = false
+        snowClipView.isUserInteractionEnabled = false
+        view.addSubview(snowClipView)
+//----------------------------------------------------------------------
+        
+        let rainView = RainView(frame: CGRect(x: -100, y: -50, width: view.bounds.size.width, height: 50))
+        let rainClipView = UIView(frame: view.frame)
+        rainClipView.clipsToBounds = true
+        rainClipView.addSubview(rainView)
+        rainView.isUserInteractionEnabled = false
+        rainClipView.isUserInteractionEnabled = false
+        view.addSubview(rainClipView)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -270,7 +292,7 @@ extension MainViewController: UIPopoverPresentationControllerDelegate {
 extension MainViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         let baseUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
-        let radius = "radius=\(500)"
+        let radius = "radius=\(5000)"
         let location = "location=\(coordinate.latitude),\(coordinate.longitude)"
         let apiKey = "AIzaSyAtUsFZoCXpk8MLCQGv7VHCADgxIzpMLls"
         let urlString = "\(baseUrl)?\(location)&\(radius)&rankby=prominence&sensor=true&key=\(apiKey)"
