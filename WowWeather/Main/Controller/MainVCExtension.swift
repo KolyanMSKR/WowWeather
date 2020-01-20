@@ -14,20 +14,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return (threeHoursForecast.list?.count)!
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThreeHoursCastCellID",
                                                       for: indexPath) as! ThreeHoursForecastCell
         
         let forecast = threeHoursForecast.list![indexPath.row]
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
-        let date = dateFormatter.date(from: forecast.dtTxt)
-        
-        cell.timeLabel.text = date?.toString(dateFormat: "HH:mm")
-        cell.temperatureLabel.text = String(Int(forecast.main.temp)) + "°"
-        cell.weatherImageView.image = UIImage(named: forecast.weather[0].icon)
-        cell.humidityLabel.text = String(forecast.main.humidity) + "%"
+        cell.configureCell(forecast: forecast)
         
         return cell
     }

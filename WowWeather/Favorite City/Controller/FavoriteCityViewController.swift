@@ -53,21 +53,14 @@ extension FavoriteCityViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteCityCellID", for: indexPath) as! FavoriteCityCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteCityCellID",
+                                                 for: indexPath) as! FavoriteCityCell
         
         let latitude = cities[indexPath.row].latitude
         let longitude = cities[indexPath.row].longitude
         
         weatherManager.fetchCurrentWeatherWith(coordinates: Coord(lat: latitude, lon: longitude)) { currentWeather in
-            cell.nameCityLabel.text = currentWeather.name
-            
-            if let icon = currentWeather.weather?[0].icon {
-                let iconImage = WeatherConditionIconManager(rawValue: icon)
-                cell.sunStateImageView.image = iconImage.image
-            }
-            if let temperature = currentWeather.main?.temp {
-                cell.temperatureLabel.text = String(format: "%.0f", temperature) + "°"
-            }
+            cell.configureCell(currentWeather: currentWeather)
         }
         
         return cell
