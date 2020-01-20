@@ -15,4 +15,14 @@ class ThreeHoursForecastCell: UICollectionViewCell {
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var humidityLabel: UILabel!
     
+    func configureCell(forecast: List) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        let date = dateFormatter.date(from: forecast.dtTxt)
+        
+        timeLabel.text = date?.toString(dateFormat: "HH:mm")
+        temperatureLabel.text = String(Int(forecast.main.temp)) + "°"
+        weatherImageView.image = UIImage(named: forecast.weather[0].icon)
+        humidityLabel.text = String(forecast.main.humidity) + "%"
+    }
 }
