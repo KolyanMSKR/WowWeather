@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E04917F23CDCE81002D8A1C /* RainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E04917E23CDCE81002D8A1C /* RainView.swift */; };
 		4E093D8D236057B100A9EB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E093D8C236057B100A9EB78 /* AppDelegate.swift */; };
 		4E093D92236057B100A9EB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E093D90236057B100A9EB78 /* Main.storyboard */; };
 		4E093D94236057B500A9EB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E093D93236057B500A9EB78 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		1DBC56757362754441D7505B /* Pods-WowWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WowWeather.release.xcconfig"; path = "Target Support Files/Pods-WowWeather/Pods-WowWeather.release.xcconfig"; sourceTree = "<group>"; };
+		4E04917E23CDCE81002D8A1C /* RainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainView.swift; sourceTree = "<group>"; };
 		4E093D89236057B100A9EB78 /* WowWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WowWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E093D8C236057B100A9EB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E093D91236057B100A9EB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				4EA3E0A423C8FBDD0046801A /* SnowView.swift */,
+				4E04917E23CDCE81002D8A1C /* RainView.swift */,
 			);
 			path = "Animation Views";
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E04917F23CDCE81002D8A1C /* RainView.swift in Sources */,
 				4E0DD43E23731C7C00996D59 /* StackViewExtension.swift in Sources */,
 				4E093DAE23605AE100A9EB78 /* MainViewController.swift in Sources */,
 				4E093DB523605B6E00A9EB78 /* ThreeHoursForecastCell.swift in Sources */,

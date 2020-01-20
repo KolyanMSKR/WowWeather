@@ -276,25 +276,40 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQe-5l-E9E">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQe-5l-E9E">
                                                     <rect key="frame" x="15" y="16" width="149" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="149" id="e5T-xn-Bam"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A98-s5-SB6">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A98-s5-SB6">
                                                     <rect key="frame" x="172" y="11" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="MVh-8O-5gp"/>
+                                                        <constraint firstAttribute="height" constant="30" id="V1x-JG-ocL"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvk-gq-Rge">
-                                                    <rect key="frame" x="210" y="15" width="35" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvk-gq-Rge">
+                                                    <rect key="frame" x="210" y="15" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="PIc-Kt-rpq"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xvk-gq-Rge" firstAttribute="leading" secondItem="A98-s5-SB6" secondAttribute="trailing" constant="8" id="KHH-I0-Yli"/>
+                                                <constraint firstItem="sQe-5l-E9E" firstAttribute="top" secondItem="TfD-s8-bcV" secondAttribute="topMargin" constant="5" id="RmX-dQ-TDK"/>
+                                                <constraint firstItem="sQe-5l-E9E" firstAttribute="leading" secondItem="TfD-s8-bcV" secondAttribute="leadingMargin" id="YEP-0z-vs9"/>
+                                                <constraint firstItem="A98-s5-SB6" firstAttribute="leading" secondItem="sQe-5l-E9E" secondAttribute="trailing" constant="8" id="doX-VK-clV"/>
+                                                <constraint firstItem="xvk-gq-Rge" firstAttribute="top" secondItem="TfD-s8-bcV" secondAttribute="topMargin" constant="4" id="fEr-4H-m3s"/>
+                                                <constraint firstItem="A98-s5-SB6" firstAttribute="top" secondItem="TfD-s8-bcV" secondAttribute="topMargin" id="ntP-y5-Ewg"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameCityLabel" destination="sQe-5l-E9E" id="A87-AE-DUI"/>
