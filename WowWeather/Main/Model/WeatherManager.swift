@@ -37,13 +37,14 @@ enum ForecastType {
 class WeatherManager {
     
     private let networkService: NetworkService
+    private let apiKey = "&APPID=a593cb213cae3edd2f3454a6c01d8e9d"
     
     init(networkService: NetworkService) {
         self.networkService = networkService
     }
     
     func fetchCurrentWeatherWith(coordinates: Coord, completion: @escaping (WeatherResponse) -> Void) {
-        let request = ForecastType.CurrentWeather(apiKey: "&APPID=a593cb213cae3edd2f3454a6c01d8e9d", coordinates: coordinates).request
+        let request = ForecastType.CurrentWeather(apiKey: apiKey, coordinates: coordinates).request
         
         networkService.fetchJSONData(request: request, modelType: WeatherResponse.self) { currentWeather in
             completion(currentWeather!)
@@ -51,7 +52,7 @@ class WeatherManager {
     }
     
     func fetchFiveDayThreeHourForecastWith(coordinates: Coord, completion: @escaping (WeatherResponse) -> Void) {
-        let request = ForecastType.FiveDayThreeHourForecast(apiKey: "&APPID=a593cb213cae3edd2f3454a6c01d8e9d", coordinates: coordinates).request
+        let request = ForecastType.FiveDayThreeHourForecast(apiKey: apiKey, coordinates: coordinates).request
         
         networkService.fetchJSONData(request: request, modelType: WeatherResponse.self) { fiveDayThreeHourForecast in
             completion(fiveDayThreeHourForecast!)

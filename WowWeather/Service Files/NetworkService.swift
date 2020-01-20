@@ -32,7 +32,6 @@ class NetworkService {
         task.resume()
     }
     
-    
     func fetchJSONData<DataModel>(request: URLRequest, modelType: DataModel.Type, completion: @escaping (DataModel?) -> ())
         where DataModel: Decodable {
             createDataTask(request: request) { data, error in
